@@ -95,7 +95,8 @@ var app = {
 					page: page,
 					search: $('.post_search_text').val(),
 					th_name: th_name,
-					th_sort: th_sort
+					th_sort: th_sort,
+					max: $('.post_max').val(),
 				};
 				
 				$('form.post-list input').val(JSON.stringify(post_data));

@@ -9,9 +9,16 @@
 		
 		<article class="navbar-form navbar-left ml-b">
 			<div class="form-group">
+				<label>Per Page: </label>
+				<select class="form-control post_max">
+					<option value="40">40</option>
+					<option value="80">80</option>
+					<option value="160">160</option>
+				</select>
+				<label>Search Keyword: </label>
 				<input type="text" class="form-control post_search_text" placeholder="Enter a keyword">
 			</div>
-			<input type = "submit" value = "Search" class = "btn btn-primary post_search_submit" />
+			<input type = "submit" value = "Filter" class = "btn btn-primary post_search_submit" />
 		</article>
 		
 		<br class = "clear" />
