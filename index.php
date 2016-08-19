@@ -34,6 +34,7 @@
 						<th id = "status"><a href = "#">Status</a></th>
 						<th id = "date"><a href = "#">Date</a></th>
 						<th id = "quantity"><a href = "#">Quantity</a></th>
+						<th>Action</th>
 					</tr>
 				</thead>
 				<tbody class = "pagination-container"></tbody>

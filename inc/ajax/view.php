@@ -63,6 +63,10 @@ if( isset( $_POST['data']['page'] ) ){
 				<td>' . $item->status . '</td>
 				<td>' . $item->date . '</td>
 				<td>' . $item->quantity . '</td>
+				<td>
+					<a href="" class="text-success"><span class="glyphicon glyphicon-pencil" title="Edit"></span></a> &nbsp; &nbsp;
+					<a href="" class="text-danger"><span class="glyphicon glyphicon-remove" title="Delete"></span></a>
+				</td>
 			</tr>';         
 		}
 		
