@@ -57,7 +57,6 @@ if( isset( $_POST['data']['page'] ) ){
 			
 			$pag_content .= '
 			<tr>
-				<td align = "middle"><input type = "checkbox"></td>
 				<td>' . $item->name . '</td>
 				<td>' . $item->price . '</td>
 				<td>' . $item->status . '</td>

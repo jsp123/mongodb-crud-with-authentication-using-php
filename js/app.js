@@ -91,6 +91,8 @@ var app = {
 		this.ajax_get_items_pagination = function(page, th_name, th_sort){
 			
 			if($(".pagination-container").length){
+				$(".pagination-container").html('<img src="img/loading.gif" class="ml-tb" />');
+				
 				var post_data = {
 					page: page,
 					search: $('.post_search_text').val(),
@@ -137,30 +139,6 @@ var app = {
 		 */
 		this.update_post = function(){
 			
-			/* Pass clicked data to modal. */
-			$('#edit-modal').on('show.bs.modal', function(e) {
-				$('.update-response').html('');
-				
-				var item_id = $(e.relatedTarget).data('item-id');
-				var ticket = $(e.relatedTarget).data('ticket');
-				var category = $(e.relatedTarget).data('category');
-				var tags = $(e.relatedTarget).data('tags');
-				var excerpt = $(e.relatedTarget).data('excerpt');
-
-				$(e.currentTarget).find('input[name="item_id"]').val(item_id);
-				$(e.currentTarget).find('input[name="ticket"]').val(ticket);
-				$(e.currentTarget).find('input[name="category"]').val(category);
-				$(e.currentTarget).find('input[name="tags"]').val(tags);
-				$(e.currentTarget).find('input[name="excerpt"]').val(excerpt);
-			});
-			
-			$('form.update-item').ajaxForm({
-				success: function(response, textStatus, xhr, form) {
-					if(response == 1){
-						$('.update-response').html('<p class="bg-success p-d">Item Update Successfully!</p>');
-					}
-				}
-			});
 		}
 		
 		/**
@@ -169,40 +147,6 @@ var app = {
 		this.delete_post = function(){
 			
 		}
-		
-		/**
-		 * Ajax load all posts from view.php
-		 
-		this.load_posts = function(page) {
-			$(".cvf_pag_loading").fadeIn().css('background','#ccc');
-			
-			var ajaxurl = 'inc/ajax/view.php';
-			var data = {
-				page: page,
-				action: "demo-pagination-load-posts"
-			};
-			
-			$.post(ajaxurl, data, function(response) {
-				$(".cvf_universal_container").html(response);
-				$(".cvf_pag_loading").css({'background':'none', 'transition':'all 1s ease-out'});
-			});
-		}
-		*/
-		
-		/**
-		 * All pagination actions are listed here. 
-		 
-		this.loaded_posts_pagination = function() {
-			var _this = this;
-			
-			_this.load_posts(1);
-			
-			$('body').on('click', '.cvf-universal-pagination li.active', function(){
-				var page = $(this).attr('p');
-				_this.load_posts(page);
-			});
-		}
-		*/
 	},
 	
 	/**
