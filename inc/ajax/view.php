@@ -36,7 +36,7 @@ if( isset( $_POST['data']['page'] ) ){
 	
 	/* Retrieve all the posts */
 	$all_items = $collection
-		->find( $where_search, array('name', 'price', 'status', 'date', 'quantity') )
+		->find( $where_search, array('_id', 'name', 'price', 'status', 'date', 'quantity') )
 		->limit( $per_page )
 		->skip( $start )
 		->sort( array(
@@ -54,17 +54,18 @@ if( isset( $_POST['data']['page'] ) ){
 		foreach( $all_items as $key => $item ){
 			
 			$item = (object) $item;
+			$status = $item->status == 1 ? 'Active' : 'Inactive';
 			
 			$pag_content .= '
 			<tr>
 				<td>' . $item->name . '</td>
-				<td>' . $item->price . '</td>
-				<td>' . $item->status . '</td>
-				<td>' . $item->date . '</td>
+				<td>$' . $item->price . '</td>
+				<td>' . $status . '</td>
+				<td>' . date("F j, Y, g:i a", strtotime( $item->date ) ) . '</td>
 				<td>' . $item->quantity . '</td>
 				<td>
-					<a href="" class="text-success"><span class="glyphicon glyphicon-pencil" title="Edit"></span></a> &nbsp; &nbsp;
-					<a href="" class="text-danger"><span class="glyphicon glyphicon-remove" title="Delete"></span></a>
+					<a href="edit.php?id=' . $item->_id . '" class="text-success"><span class="glyphicon glyphicon-pencil" title="Edit"></span></a> &nbsp; &nbsp;
+					<a href="#_" class="text-danger delete-product" item_id="' . $item->_id . '"><span class="glyphicon glyphicon-remove" title="Delete"></span></a>
 				</td>
 			</tr>';         
 		}

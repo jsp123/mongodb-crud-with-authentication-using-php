@@ -138,13 +138,46 @@ var app = {
 		 * Passes all data to the modal and handles the update action and response.
 		 */
 		this.update_post = function(){
-			
+			$('.update-product').ajaxForm({
+				beforeSerialize: function() {
+					update_ckeditor_instances();
+				},
+				success: function(response, textStatus, xhr, form) {
+					if(response == 0){
+						Lobibox.notify('error', {msg: 'Update failed, please try again', size: 'mini', sound: false});
+					} else if(response == 1){
+						Lobibox.notify('success', {msg: 'Updated Successfully', size: 'mini', sound: false});
+					}
+				}
+            });
 		}
 		
 		/**
 		 * Handles the deletion of a single post
 		 */
 		this.delete_post = function(){
+			$('body').on('click', '.delete-product', function(e) {
+				e.preventDefault();
+				
+				var item = $(this);
+				var data = { 
+					item_id: item.attr('item_id')
+				}
+				
+				$.ajax({
+					url: 'inc/ajax/delete.php',
+					type: 'POST',
+					data: data,
+					success: function (response) {
+						if(response == 0){
+							Lobibox.notify('error', {msg: 'Delete failed, please try again', size: 'mini', sound: false});
+						} else if(response == 1){
+							item.parents('tr').css('background', '#add9ff').fadeOut('fast');
+							Lobibox.notify('success', {msg: 'Deleted Successfully', size: 'mini', sound: false});
+						}
+					}
+				});
+			});
 			
 		}
 	},
@@ -160,14 +193,28 @@ var app = {
 		 *
 		 */
 		this.init = function() {
-			this.my_global();
+			this.set_ckeditor();
+			this.set_datepicker();
 		}
 		
 		/**
-		 * Dummy
+		 * Load CKEditor plugin
 		 */
-		this.my_global = function() {
-			
+		this.set_ckeditor = function() {
+			if($('#ck-editor-area').length){
+				load_ckeditor('ck-editor-area', 300);
+			}
+		}
+		
+		/**
+		 * Load CKEditor plugin
+		 */
+		this.set_datepicker = function() {
+			if('.datepicker'){
+				$('.datepicker').datetimepicker({
+                    format: 'YYYY-MM-DD HH:mm:ss'
+                });
+			}
 		}
 	}
 }
