@@ -1,11 +1,26 @@
 <?php 
-require_once('functions.php');
-
 /* Local Database Connection */
-$connection = new MongoClient();
-$db = $connection->selectDB('carlofontanos');
+try {
+	$connection = new MongoClient();
+	$db = $connection->selectDB('carlofontanos');
+	$users = $db->users;
+	$products = $db->products;
+	
+	
+} catch ( MongoConnectionException $e ) {
+	die('Error connecting to MongoDB server');
+	
+} catch ( MongoException $e ) {
+	die('Error: ' . $e->getMessage());
+}
 
 /* Live Database Connection 
 $conn = new MongoClient('mongodb://admin:pass@ds013206.mlab.com:13206/mongoapp');
 $db = $connection->selectDB('mongoapp');
 */
+
+require_once('functions.php');
+require_once('user.php');
+
+session_start();
+
