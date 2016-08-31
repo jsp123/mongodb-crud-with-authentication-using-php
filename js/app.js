@@ -109,7 +109,7 @@ var app = {
 				};
 				
 				$.ajax({
-					url: 'inc/ajax/view.php',
+					url: 'inc/ajax/products/view.php',
 					type: 'POST',
 					data: data,
 					success: function (response) {
@@ -165,7 +165,7 @@ var app = {
 				}
 				
 				$.ajax({
-					url: 'inc/ajax/delete.php',
+					url: 'inc/ajax/products/delete.php',
 					type: 'POST',
 					data: data,
 					success: function (response) {

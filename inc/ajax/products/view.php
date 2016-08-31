@@ -1,5 +1,5 @@
 <?php 
-require_once('../config.php');
+require_once('../../config.php');
 
 $pag_content = '';
 $pag_navigation = '';
@@ -63,7 +63,7 @@ if( isset( $_POST['data']['page'] ) ){
 				<td>' . date("F j, Y, g:i a", strtotime( $item->date ) ) . '</td>
 				<td>' . $item->quantity . '</td>
 				<td>
-					<a href="edit.php?id=' . $item->_id . '" class="text-success"><span class="glyphicon glyphicon-pencil" title="Edit"></span></a> &nbsp; &nbsp;
+					<a href="user-products-edit.php?id=' . $item->_id . '" class="text-success"><span class="glyphicon glyphicon-pencil" title="Edit"></span></a> &nbsp; &nbsp;
 					<a href="#_" class="text-danger delete-product" item_id="' . $item->_id . '"><span class="glyphicon glyphicon-remove" title="Delete"></span></a>
 				</td>
 			</tr>';         
