@@ -19,11 +19,13 @@ $conn = new MongoClient('mongodb://admin:pass@ds013206.mlab.com:13206/mongoapp')
 $db = $connection->selectDB('mongoapp');
 */
 
+session_start();
+
 require_once('functions.php');
+
+/* Models */
 require_once('user.php');
 require_once('product.php');
-
-session_start();
 
 if( is_user_logged_in() ){
 	$current_user = current_user();

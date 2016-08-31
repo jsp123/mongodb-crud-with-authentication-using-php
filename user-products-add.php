@@ -17,11 +17,11 @@
 			Add Product
 		</div>
 		<div class="panel-body">
-			<form method="post" action="inc/ajax/products/update.php" class="create-product">
+			<form method="post" action="inc/ajax/products/create.php" class="create-product">
 				<div class="col-md-8">
 					<div class="form-group">
-						<label>Name</label>
-						<input type="text" class="form-control" name="name" value="" />
+						<label>Name*</label>
+						<input type="text" class="form-control required" name="name" value="" />
 					</div>
 					<div class="form-group">
 						<label>Description</label>
@@ -34,10 +34,10 @@
 				</div>
 				<div class="col-md-4">
 					<div class="form-group">
-						<label>Price</label>
+						<label>Price*</label>
 						<div class="input-group">
 							<div class="input-group-addon">$</div>
-							<input type="text" class="form-control" name="price" value="" placeholder="Amount">
+							<input type="text" class="form-control required" name="price" value="" placeholder="Amount">
 						</div>
 					</div>
 					<div class="form-group">
@@ -57,8 +57,8 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label>Quantity</label>
-						<input type="number" class="form-control" name="quantity" value="" />
+						<label>Quantity*</label>
+						<input type="number" class="form-control required" name="quantity" value="" />
 					</div>
 					<input type="submit" class="btn btn-success" value="Submit" />
 				</div>

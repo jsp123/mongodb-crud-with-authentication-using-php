@@ -20,6 +20,7 @@ var app = {
 		this.init = function() {
 			// this.loaded_posts_pagination();
 			this.get_items_pagination();
+			this.add_post();
 			this.update_post();
 			this.delete_post();
 		}
@@ -135,7 +136,7 @@ var app = {
 		}
 		
 		/**
-		 * Passes all data to the modal and handles the update action and response.
+		 * Submit updated data via ajax using jquery form plugin
 		 */
 		this.update_post = function(){
 			$('.update-product').ajaxForm({
@@ -147,6 +148,37 @@ var app = {
 						Lobibox.notify('error', {msg: 'Update failed, please try again', size: 'mini', sound: false});
 					} else if(response == 1){
 						Lobibox.notify('success', {msg: 'Updated Successfully', size: 'mini', sound: false});
+					}
+				}
+            });
+		}
+		
+		/**
+		 * Submit new product data via ajax using jquery form plugin
+		 */
+		this.add_post = function(){
+			$('.create-product').ajaxForm({
+				beforeSubmit: function(arr, $form, options) {
+					var proceed = true;
+					
+					$('input.required').each(function(index) {
+						if($(this).val() == ''){
+							Lobibox.notify('error', {msg: 'Please fill-up the required fields', size: 'mini', sound: false});
+							proceed = false;
+							return false;
+						}
+					});
+					
+					return proceed;
+				},
+				beforeSerialize: function() {
+					update_ckeditor_instances();
+				},
+				success: function(response, textStatus, xhr, form) {
+					if(response == 0){
+						Lobibox.notify('error', {msg: 'Failed to create the product, please try again', size: 'mini', sound: false});
+					} else if(response == 1){
+						Lobibox.notify('success', {msg: 'Product created successfully', size: 'mini', sound: false});
 					}
 				}
             });
