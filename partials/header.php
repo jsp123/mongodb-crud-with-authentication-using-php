@@ -16,16 +16,26 @@
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="index.php">MongoDB CRUD Example</a>
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.php">MongoDB CRUD with Auth Example</a>
 				</div>
-				<!-- 
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#">Page 1</a></li>
-					<li><a href="#">Page 2</a></li> 
-					<li><a href="#">Page 3</a></li> 
-				</ul>
-				-->
+				
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<?php if( ! is_user_logged_in() ): ?>
+							<li><a href="register.php">Register</a></li>
+							<li><a href="login.php">Login</a></li>
+						<?php else: ?>
+							<li><a href="account.php">Account</a></li>
+							<li><a href="logout.php">Logout</a></li>
+						<?php endif; ?>
+					</ul>
+				</div>
 			</div>
 		</nav>
 	</div>
