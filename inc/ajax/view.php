@@ -1,7 +1,6 @@
 <?php 
 require_once('../config.php');
 
-$collection = $db->products;
 $pag_content = '';
 $pag_navigation = '';
 
@@ -35,7 +34,7 @@ if( isset( $_POST['data']['page'] ) ){
 	}
 	
 	/* Retrieve all the posts */
-	$all_items = $collection
+	$all_items = $products
 		->find( $where_search, array('_id', 'name', 'price', 'status', 'date', 'quantity') )
 		->limit( $per_page )
 		->skip( $start )
@@ -43,7 +42,7 @@ if( isset( $_POST['data']['page'] ) ){
 			$name => $sort == 'ASC' ? 1 : -1
 		));
 	
-	$count = $collection
+	$count = $products
 		->find($where_search)
 		->count();
 		

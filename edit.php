@@ -5,12 +5,11 @@
 	<?php
 	/* Get _id of object from the URL */
 	$item_id = $_GET['id'];
-	$collection = $db->products;
 	
 	/* Check if we recevied a valid object id */
 	if( MongoId::isValid( $item_id ) ):	
 		$item = array();
-		$item_data = $collection->findOne( array('_id' => new MongoId( $item_id ) ) );
+		$item_data = $products->findOne( array('_id' => new MongoId( $item_id ) ) );
 		
 		/* List down all known fields for our document */
 		/* If you wish to add more fields, make sure to populate them here */

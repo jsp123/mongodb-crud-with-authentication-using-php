@@ -1,8 +1,6 @@
 <?php 
 require_once('../config.php');
 
-$collection = $db->products;
-
 /* Check if we received an object ID and that if it's valid */
 if( isset( $_POST['item_id'] ) && MongoId::isValid( $_POST['item_id'] ) == true ){
 	
@@ -14,13 +12,13 @@ if( isset( $_POST['item_id'] ) && MongoId::isValid( $_POST['item_id'] ) == true 
 	}
 	
 	/* Update our fields from the database */
-	$update_item = $collection->update(
+	$update_item = $products->update(
 		array( '_id' => new MongoId( $_POST['item_id'] ) ),
 		array( '$set' => $post_fields_array )
 	);
 	
 	/* Check if the insert was successfull */
-	echo $collection->findOne() ? 1 : 0;
+	echo $products->findOne() ? 1 : 0;
 	
 } else {
 	echo 0;
