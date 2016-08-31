@@ -25,3 +25,6 @@ require_once('product.php');
 
 session_start();
 
+if( is_user_logged_in() ){
+	$current_user = current_user();
+}
