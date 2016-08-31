@@ -1,5 +1,10 @@
 <?php require_once('inc/config.php'); ?>
 <?php require_once('partials/header.php'); ?>
+<?php 
+if( ! is_user_logged_in() ){
+	header('Location: user-login.php');
+}
+?>
 
 <div class="container">
 	<?php

@@ -2,7 +2,7 @@
 <?php require_once('partials/header.php'); ?>
 <?php 
 if( ! is_user_logged_in() ) {
-	header('Location: index.php');
+	header('Location: login.php');
 }
 
 $current_user = current_user();

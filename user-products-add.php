@@ -1,5 +1,10 @@
 <?php require_once('inc/config.php'); ?>
 <?php require_once('partials/header.php'); ?>
+<?php 
+if( ! is_user_logged_in() ){
+	header('Location: user-login.php');
+}
+?>
 
 <div class="container">
 	<p class="ml-b"><a href = "user-products.php" class="ml-b text-success"><span class="glyphicon glyphicon-chevron-left"></span> All products</a></p>
@@ -52,7 +57,7 @@
 						<label>Quantity</label>
 						<input type="number" class="form-control" name="quantity" value="" />
 					</div>
-					<input type="submit" class="btn btn-success" value="Update" />
+					<input type="submit" class="btn btn-success" value="Submit" />
 				</div>
 			</form>
 		</div>
