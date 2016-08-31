@@ -18,7 +18,7 @@ if( isset( $_POST['login'] ) ) {
 	
 	/* All validations completed, let's login the user */
 	} else {
-		login( $_POST['email'], $_POST['password'], 'account.php' );
+		login( $_POST['email'], $_POST['password'], 'user-account.php' );
 	}
 }
 ?>

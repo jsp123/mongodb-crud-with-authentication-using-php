@@ -25,14 +25,14 @@
 		/* For better readability, I usually convert the array to an object */
 		$item = (object) $item;
 	?>
-		<p class="ml-b"><a href = "index.php" class="ml-b text-success"><span class="glyphicon glyphicon-chevron-left"></span> All products</a></p>
+		<p class="ml-b"><a href = "user-products.php" class="ml-b text-success"><span class="glyphicon glyphicon-chevron-left"></span> All products</a></p>
 		
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				Edit Product
 			</div>
 			<div class="panel-body">
-				<form method="post" action="inc/ajax/update.php" class="update-product">
+				<form method="post" action="inc/ajax/products/update.php" class="update-product">
 					<input type="hidden" name="item_id" value="<?php echo $item_id; ?>">
 					<div class="col-md-8">
 						<div class="form-group">

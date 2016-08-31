@@ -2,7 +2,7 @@
 <?php require_once("partials/header.php"); ?>
 <?php 
 if( is_user_logged_in() ){
-	header('Location: account.php');
+	header('Location: user-account.php');
 }
 
 $error_message = '';
