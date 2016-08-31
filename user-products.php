@@ -1,9 +1,12 @@
-<?php require_once('inc/config.php'); ?>
-<?php require_once('partials/header.php'); ?>
 <?php 
-if( ! is_user_logged_in() ){
-	header('Location: user-login.php');
-}
+	require_once('inc/config.php');
+	
+	if( ! is_user_logged_in() ){
+		header('Location: user-login.php');
+		exit();
+	}
+	
+	require_once('partials/header.php'); 
 ?>
 
 <div class="container">
