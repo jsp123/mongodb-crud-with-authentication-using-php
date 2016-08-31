@@ -21,6 +21,7 @@ $db = $connection->selectDB('mongoapp');
 
 require_once('functions.php');
 require_once('user.php');
+require_once('product.php');
 
 session_start();
 
