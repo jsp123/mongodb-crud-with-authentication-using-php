@@ -28,11 +28,17 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
 						<?php if( ! is_user_logged_in() ): ?>
-							<li><a href="register.php">Register</a></li>
-							<li><a href="login.php">Login</a></li>
+							<li><a href="user-register.php">Register</a></li>
+							<li><a href="user-login.php">Login</a></li>
 						<?php else: ?>
-							<li><a href="account.php">Account</a></li>
-							<li><a href="logout.php">Logout</a></li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dashboard <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a href="user-account.php">Account</a></li>
+									<li><a href="user-products.php">Manage Products</a></li>
+								</ul>
+							</li>
+							<li><a href="user-logout.php">Logout</a></li>
 						<?php endif; ?>
 					</ul>
 				</div>
