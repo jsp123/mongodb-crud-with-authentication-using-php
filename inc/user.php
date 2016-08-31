@@ -6,7 +6,7 @@ function register( $user_data ) {
 	$user_data['password'] = md5( $user_data['password'] );	
 	$users->insert( $user_data );
 	
-	login( $user_data['email'], $user_data['password'], 'account.php' );
+	login( $user_data['email'], $user_data['password'], 'user-account.php' );
 		
 	return true;
 }
