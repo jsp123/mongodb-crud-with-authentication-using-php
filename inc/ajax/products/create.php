@@ -35,7 +35,7 @@ if( isset( $_POST['name'] ) ){
 					/* If no errors, upload the file */
 					if( move_uploaded_file( $_FILES["files"]["tmp_name"][$f], $path . $new_filename ) ) {
 						/* */
-						$images[] = $path . $new_filename;
+						$images[] = $new_filename;
 					}
 				}
 			}
