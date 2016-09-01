@@ -2,7 +2,7 @@
 /* Local Database Connection */
 try {
 	$connection = new MongoClient();
-	$db = $connection->selectDB('carlofontanos');
+	$db = $connection->selectDB('company_products');
 	$users = $db->users;
 	$products = $db->products;
 	
@@ -20,6 +20,8 @@ $db = $connection->selectDB('mongoapp');
 */
 
 session_start();
+
+define('ABSPATH', $_SERVER['DOCUMENT_ROOT'] . '/development/mongodb-crud-with-authentication-using-php'); /* Change this to your development path */
 
 require_once('functions.php');
 
