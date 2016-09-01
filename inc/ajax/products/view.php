@@ -28,14 +28,21 @@ if( isset( $_POST['data']['page'] ) ){
 		$where_search = array(
 			'$or' => array(
 				array('name' => $filter),
-				array('price' => $filter)
+				array('price' => $filter),
 			)
 		);
 	}
 	
+	/* Only query for items owned by currently logged in user */
+	$where = array(
+		'$and' => array(
+			array('author' => $current_user->email)
+		)
+	);
+	
 	/* Retrieve all the posts */
 	$all_items = $products
-		->find( $where_search, array('_id', 'name', 'price', 'status', 'date', 'quantity') )
+		->find( array_merge( $where, $where_search ) )
 		->limit( $per_page )
 		->skip( $start )
 		->sort( array(
@@ -43,7 +50,7 @@ if( isset( $_POST['data']['page'] ) ){
 		));
 	
 	$count = $products
-		->find($where_search)
+		->find( array_merge( $where, $where_search ) )
 		->count();
 		
 	/* Check if our query returns anything. */
