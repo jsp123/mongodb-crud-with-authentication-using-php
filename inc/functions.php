@@ -75,14 +75,3 @@ function compress_output_light( $buffer ) {
 	return $buffer;
 
 }
-
-/**
- * is_set()
- *
- * Simply checks if the variable is set. 
- * If the requested field is not available yet, at least we could easily set a empty string as its temporary value
- *
- */
-function is_set( $variable ){
-	return isset( $variable ) ? $variable : '';
-}

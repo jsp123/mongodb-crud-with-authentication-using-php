@@ -60,22 +60,21 @@ if( isset( $_POST['data']['page'] ) ){
 		foreach( $all_items as $key => $item ){
 			
 			$item = (object) $item;
-			$status = is_set( $item->status ) == 1 ? 'Active' : 'Inactive';
-			$date = is_set( $item->date ) ? date("F j, Y, g:i a", strtotime( $item->date ) ) : '';
+			$status = $item->status == 1 ? 'Active' : 'Inactive';
 			
 			$pag_content .= '
 			<tr>
-				<td><img src="img/uploads/' . is_set( $item->featured_image ) . '" width="100" /></td>
-				<td>' . is_set( $item->name ) . '</td>
-				<td>$' . is_set( $item->price ) . '</td>
+				<td><img src="img/uploads/' . $item->featured_image . '" width="100" /></td>
+				<td>' . $item->name . '</td>
+				<td>$' . $item->price . '</td>
 				<td>' . $status . '</td>
-				<td>' . $date . '</td>
-				<td>' . is_set( $item->quantity ). '</td>
+				<td>' . date("F j, Y, g:i a", strtotime( $item->date ) ) . '</td>
+				<td>' . $item->quantity . '</td>
 				<td>
 					<a href="user-products-edit.php?id=' . $item->_id . '" class="text-success"><span class="glyphicon glyphicon-pencil" title="Edit"></span></a> &nbsp; &nbsp;
 					<a href="#_" class="text-danger delete-product" item_id="' . $item->_id . '"><span class="glyphicon glyphicon-remove" title="Delete"></span></a>
 				</td>
-			</tr>';
+			</tr>';         
 		}
 		
 	/* If the query returns nothing, we throw an error message */

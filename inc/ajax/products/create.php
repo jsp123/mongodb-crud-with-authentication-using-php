@@ -50,9 +50,17 @@ if( isset( $_POST['name'] ) ){
 	}
 	
 	$post_fields_array['images'] = $images;
-	$add_product = add_product( $post_fields_array );
 	
-	echo $add_product ? $add_product : 0;
+	/* Insert item then retrieve the generated item ID */
+	$item_id = add_product( $post_fields_array );
+	
+	/* Let's set a default featured image */
+	if( $images ){
+		set_featured_image( $item_id, $images[0] );
+	}
+	
+	
+	echo $item_id ? $item_id : 0;
 	
 } else {
 	echo 0;
