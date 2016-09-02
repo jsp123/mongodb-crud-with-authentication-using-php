@@ -27,6 +27,7 @@
 				
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
+						<li><a href="products.php">Products</a></li>
 						<?php if( ! is_user_logged_in() ): ?>
 							<li><a href="user-register.php">Register</a></li>
 							<li><a href="user-login.php">Login</a></li>
