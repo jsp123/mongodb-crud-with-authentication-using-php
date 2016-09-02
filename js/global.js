@@ -22,3 +22,26 @@ function update_ckeditor_instances() {
 		CKEDITOR.instances[instance].updateElement();
 	}
 }
+
+/**
+ * Provides a nice wave animation effect 
+ * 
+ */
+function wave_box_animate(){
+	if( $('.wave-box-effect').length ){
+		jQuery( ".wave-box-effect" ).css( "left", "0px" );
+		jQuery( ".wave-box-effect" ).animate( { 'left':"99%" }, 1000, wave_box_animate );
+	}
+}
+
+function wave_box(option) {
+	if($('.wave-box-wrapper').length){
+		if(option == 'on'){
+			if($(".wave-box-wrapper .wave-box").html('<div class="wave-box-effect"></div>').show()){
+				wave_box_animate();
+			}
+		} else if(option == 'off')  {
+			$(".wave-box-wrapper .wave-box").html('').fadeOut();
+		}
+	}
+}
