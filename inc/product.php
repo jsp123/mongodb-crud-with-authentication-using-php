@@ -59,6 +59,20 @@ function add_product( $data ){
 	
 }
 
+function get_product( $item_id ){
+	
+	global $products;
+	
+	$item = $products->findOne( 
+		array('_id' => new MongoId( $item_id ) ) 
+	);
+	
+	/* For better readability, I usually convert the array to an object */
+	$item = (object) $item;
+	
+	return $item;
+}
+
 function unset_image( $item_id, $image ){
 	
 	global $products;
