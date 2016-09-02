@@ -64,6 +64,7 @@ if( isset( $_POST['data']['page'] ) ){
 			
 			$pag_content .= '
 			<tr>
+				<td><img src="img/uploads/' . $item->featured_image . '" width="100" /></td>
 				<td>' . $item->name . '</td>
 				<td>$' . $item->price . '</td>
 				<td>' . $status . '</td>

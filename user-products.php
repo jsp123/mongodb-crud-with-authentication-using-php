@@ -37,6 +37,7 @@
 		<table class = "table table-striped table-post-list no-margin">
 			<thead>
 				<tr>
+					<th>Image</th>
 					<th id = "name" class = "active"><a href = "#">Name</a></th>
 					<th id = "price"><a href = "#">Price</a></th>
 					<th id = "status"><a href = "#">Status</a></th>
