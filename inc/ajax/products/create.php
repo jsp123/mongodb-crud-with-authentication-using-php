@@ -50,8 +50,9 @@ if( isset( $_POST['name'] ) ){
 	}
 	
 	$post_fields_array['images'] = $images;
+	$add_product = add_product( $post_fields_array );
 	
-	echo add_product( $post_fields_array ) ? 1 : 0;
+	echo $add_product ? $add_product : 0;
 	
 } else {
 	echo 0;
