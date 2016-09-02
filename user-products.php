@@ -9,7 +9,7 @@
 	require_once('partials/header.php'); 
 ?>
 
-<div class="container">
+<div class="container products-view-user">
 	<form class = "post-list">
 		<input type = "hidden" value = "" />
 	</form>
