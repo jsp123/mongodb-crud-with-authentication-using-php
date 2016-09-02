@@ -6,6 +6,18 @@ function delete_product( $id ){
 	/* Check if object ID is valid */
 	if( MongoId::isValid( $id ) == true ){
 		
+		$product = get_product( $id );
+		
+		/* Delete all images of this product */
+		if( isset( $product->images ) && ! empty( $product->images ) ){
+			foreach( $product->images as $image ){
+				$image_path = ABSPATH . '/img/uploads/' . $image;
+				if( file_exists( $image_path ) == true ){
+					unlink( $image_path );
+				}
+			}
+		}
+		
 		$remove = $products->remove( 
 			array( '_id' => new MongoID( $id ) )
 		);
