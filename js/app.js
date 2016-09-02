@@ -23,6 +23,8 @@ var app = {
 			this.add_post();
 			this.update_post();
 			this.delete_post();
+			this.unset_image();
+			this.set_featured_image();
 		}
 		
 		/**
@@ -142,13 +144,37 @@ var app = {
 			$('.update-product').ajaxForm({
 				beforeSerialize: function() {
 					update_ckeditor_instances();
+					wave_box('on');
 				},
 				success: function(response, textStatus, xhr, form) {
-					if(response == 0){
-						Lobibox.notify('error', {msg: 'Update failed, please try again', size: 'mini', sound: false});
-					} else if(response == 1){
-						Lobibox.notify('success', {msg: 'Updated Successfully', size: 'mini', sound: false});
+					response = JSON.parse(response);
+					
+					if(response.status == 0){
+						if($.isArray(response.errors)){
+							$.each(response.errors, function (key, error_nessage) {
+								Lobibox.notify('error', {msg: error_nessage, size: 'mini', sound: false});
+							});
+						}
 					}
+					if(response.status == 1){
+						if(response.message){
+							Lobibox.notify('success', {msg: response.message, size: 'mini', sound: false});
+						}
+					}
+					if(response.images){
+						$('.image-input').val('');
+						$('.no-item-images').remove();
+						$.each(response.images, function (index, image) {
+							$('.images-section').append(
+								'<div class = "col-sm-3">' + 
+									'<span class="unset-image glyphicon glyphicon-remove text-danger lead m-0 c-p" id="unset-' + image + '" title="Delete image"></span>' + 
+									'<span class="set-featured-image glyphicon glyphicon-star-empty text-warning lead m-0 c-p" id="featured-' + image + '" title="Set as featured image"></span>' + 
+									'<img src = "img/uploads/' + image + '" class = "img-thumbnail img-responsive" />' + 
+								'</div>'
+							);
+						});
+					}
+					wave_box('off');
 				}
             });
 		}
@@ -177,8 +203,8 @@ var app = {
 				success: function(response, textStatus, xhr, form) {
 					if(response == 0){
 						Lobibox.notify('error', {msg: 'Failed to create the product, please try again', size: 'mini', sound: false});
-					} else if(response == 1){
-						Lobibox.notify('success', {msg: 'Product created successfully', size: 'mini', sound: false});
+					} else {
+						window.location.href = 'user-products-edit.php?id=' + response;
 					}
 				}
             });
@@ -211,6 +237,81 @@ var app = {
 				});
 			});
 			
+		}
+		
+		/**
+		 * Sends an AJAX request to delete the image.
+		 */
+		this.unset_image = function() {
+			$('body').on('click', '.unset-image', function(e) {
+				e.preventDefault();
+				wave_box('on');
+				
+				var parent_element = $(this).parent();
+				
+				$.ajax({
+					url: 'inc/ajax/products/image.php',
+					type: 'POST',
+					data: {
+						'action': 'unset-image',
+						'item_id': $('.item-edit').attr('id').split('-')[1],
+						'image': this.id.split('-')[1]
+					},
+					success: function (response) {
+						response = JSON.parse(response);
+						if(response.status == '1'){
+							parent_element.fadeOut();
+							Lobibox.notify('success', {msg: response.message, size: 'mini', sound: false});
+						} else {
+							Lobibox.notify('error', {msg: response.message, size: 'mini', sound: false});
+						}
+						wave_box('off');
+					}
+				});
+			});
+		}
+		
+		/**
+		 * Sends an AJAX request to set the image as featured.
+		 */
+		this.set_featured_image = function() {
+			$('body').on('click', '.set-featured-image', function(e) {
+				e.preventDefault();
+				wave_box('on');
+				
+				if( $(this).hasClass('glyphicon-star') ){
+					Lobibox.notify('error', {msg: 'The image you clicked is already the featured image.', size: 'mini', sound: false});
+					wave_box('off');
+					
+				} else {
+					var image_featured = '#' + this.id;
+					var image_featured_id = this.id.split('-')[1];
+					
+					$.ajax({
+						url: 'inc/ajax/products/image.php',
+						type: 'POST',
+						data: {
+							'action': 'set-featured-image',
+							'item_id': $('.item-edit').attr('id').split('-')[1],
+							'image': image_featured_id
+						},
+						datatype: 'JSON',
+						success: function (response) {
+							response = JSON.parse(response);
+							
+							if(response.status == '1'){
+								if($('.images-section').find('span.glyphicon-star').switchClass('glyphicon-star', 'glyphicon-star-empty').removeAttr('style')){
+									$(image_featured).switchClass('glyphicon-star-empty', 'glyphicon-star').css('color', '#E4C317');
+									Lobibox.notify('success', {msg: response.message, size: 'mini', sound: false});
+								}
+							} else {
+								Lobibox.notify('error', {msg: response.message, size: 'mini', sound: false});
+							}
+							wave_box('off');
+						}
+					});
+				}
+			});
 		}
 	},
 	

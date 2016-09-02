@@ -51,9 +51,65 @@ function add_product( $data ){
 	$data['author'] = current_user()->email;
 	
 	/* Create the product */
-	$products->insert( $data );
+	$products->insert( $data, array('fsync' => true) );
 	
-	/* Check if the insert was successfull */
-	return $products->findOne() ? true : false;
+	/* After the insert, we can already access the _id of the new item */
+	$item_id = $data['_id'];
+	return $item_id ? $item_id : false;
+	
+}
+
+function unset_image( $item_id, $image ){
+	
+	global $products;
+	
+	$remove = $products->update( 
+		array('_id' => new MongoID( $item_id ) ),
+		array('$pull' => 
+			array(
+				'images' => $image
+			)
+		)
+	);
+	
+	return $remove ? true : false;
+	
+}
+
+function set_featured_image( $item_id, $image ){
+	
+	global $products;
+	
+	$set_featured_image = $products->update( 
+		array('_id' => new MongoID( $item_id ) ),
+		array('$set' => 
+			array(
+				'featured_image' => $image
+			)
+		)
+	);
+	
+	return $set_featured_image ? true : false;
+	
+}
+
+function add_image( $item_id, $image ){
+	
+	global $products;
+	
+	$add_image = $products->update( 
+		array('_id' => new MongoID( $item_id ) ),
+		/** 
+		 * Use "$addToSet" instead of "$push" to tell mongoDB to 
+		 * add the image only if it does not exist yet in the set.
+		 */
+		array('$addToSet' => 
+			array(
+				'images' => $image
+			)
+		)
+	);
+	
+	return $add_image ? true : false;
 	
 }
