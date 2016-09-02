@@ -204,10 +204,14 @@ var app = {
 					if(response == 0){
 						Lobibox.notify('error', {msg: 'Failed to create the product, please try again', size: 'mini', sound: false});
 					} else {
-						window.location.href = 'user-products-edit.php?id=' + response;
+						window.location.href = 'user-products-edit.php?id=' + response + '&status=created';
 					}
 				}
             });
+			
+			if(get_url_value('status') == 'created'){
+				Lobibox.notify('success', {msg: 'Item successfully created, you may continue editing this product.', size: 'mini', sound: false});
+			}
 		}
 		
 		/**
