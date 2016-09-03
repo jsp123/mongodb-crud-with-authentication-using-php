@@ -41,35 +41,54 @@ if( isset( $_POST['email'] ) ) {
 
 <div class="container">
 	<form action="" method="post">
-		<div class="col-md-6">
-			<?php if( ! empty( $error_message ) ): ?>
-				<p class="bg-danger p-d ml-b"><?php echo $error_message; ?></p>
-			<?php endif; ?>
-			<div class="form-group">
-				<label>Email<span class="text-red">*</span>:</label>
-				<input type="text" name="email" value="<?php echo isset( $_POST['email'] ) ? $_POST['email'] : ''; ?>" class="form-control">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="panel panel-default">
+				<div class="panel-heading">Register</div>
+				<div class="panel-body">
+					<?php if( ! empty( $error_message ) ): ?>
+						<p class="bg-danger p-d ml-b"><?php echo $error_message; ?></p>
+					<?php endif; ?>
+					<div class="form-group clearfix">
+						<label class="col-md-4 control-label text-right">Email<span class="text-red">*</span>:</label>
+						<div class="col-md-6">
+							<input type="text" name="email" value="<?php echo isset( $_POST['email'] ) ? $_POST['email'] : ''; ?>" class="form-control">
+						</div>
+					</div>
+					<div class="form-group clearfix">
+						<label class="col-md-4 control-label text-right">Password<span class="text-red">*</span>:</label>
+						<div class="col-md-6">
+							<input type="password" name="password" value="<?php echo isset( $_POST['password'] ) ? $_POST['password'] : ''; ?>" class="form-control" />
+						</div>
+					</div>
+					<div class="form-group clearfix">
+						<label class="col-md-4 control-label text-right">Confirm password:</label>
+						<div class="col-md-6">
+							<input type="password" name="password2" value="<?php echo isset( $_POST['password2'] ) ? $_POST['password2'] : ''; ?>" class="form-control" />
+						</div>
+					</div>
+					<div class="form-group clearfix">
+						<label class="col-md-4 control-label text-right">First Name:</label>
+						<div class="col-md-6">
+							<input type="first_name" name="first_name" value="<?php echo isset( $_POST['first_name'] ) ? $_POST['first_name'] : ''; ?>" class="form-control" />
+						</div>
+					</div>
+					<div class="form-group clearfix">
+						<label class="col-md-4 control-label text-right">Last Name:</label>
+						<div class="col-md-6">
+							<input type="last_name" name="last_name" value="<?php echo isset( $_POST['last_name'] ) ? $_POST['last_name'] : ''; ?>" class="form-control" />
+						</div>
+					</div>
+					<div class="form-group clearfix">
+						<label class="col-md-4 control-label text-right">Phone Number:</label>
+						<div class="col-md-6">
+							<input type="phone_number" name="phone_number" value="<?php echo isset( $_POST['phone_number'] ) ? $_POST['phone_number'] : ''; ?>" class="form-control" />
+						</div>
+					</div>
+					<div class="col-md-6 col-md-offset-4">
+						<input type="submit" value="Register" class="btn btn-success">
+					</div>
+				</div>
 			</div>
-			<div class="form-group">
-				<label>Password<span class="text-red">*</span>:</label>
-				<input type="password" name="password" value="<?php echo isset( $_POST['password'] ) ? $_POST['password'] : ''; ?>" class="form-control" />
-			</div>
-			<div class="form-group">
-				<label>Confirm password:</label>
-				<input type="password" name="password2" value="<?php echo isset( $_POST['password2'] ) ? $_POST['password2'] : ''; ?>" class="form-control" />
-			</div>
-			<div class="form-group">
-				<label>First Name:</label>
-				<input type="first_name" name="first_name" value="<?php echo isset( $_POST['first_name'] ) ? $_POST['first_name'] : ''; ?>" class="form-control" />
-			</div>
-			<div class="form-group">
-				<label>Last Name:</label>
-				<input type="last_name" name="last_name" value="<?php echo isset( $_POST['last_name'] ) ? $_POST['last_name'] : ''; ?>" class="form-control" />
-			</div>
-			<div class="form-group">
-				<label>Phone Number:</label>
-				<input type="phone_number" name="phone_number" value="<?php echo isset( $_POST['phone_number'] ) ? $_POST['phone_number'] : ''; ?>" class="form-control" />
-			</div>
-			<input type="submit" value="Register" class="btn btn-success">
 		</div>
 	</form>
 </div>

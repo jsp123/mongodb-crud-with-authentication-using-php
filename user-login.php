@@ -24,22 +24,33 @@ if( isset( $_POST['login'] ) ) {
 ?>
 
 <div class="container">
-	<div class="col-md-6">
-		<?php if( ! empty( $error_message ) ): ?>
-			<p class="bg-danger p-d ml-b"><?php echo $error_message; ?></p>
-		<?php endif; ?>
-		<form name="form1" method="post">
-			<div class="form-group">
-				<label for="email">Email:</label>
-				<input name="email" value="<?php echo isset( $_POST['email'] ) ? $_POST['email'] : '' ; ?>" type="text" class="form-control" />
+	<form name="form1" method="post">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="panel panel-default">
+				<div class="panel-heading">Login</div>
+				<div class="panel-body">
+					<?php if( ! empty( $error_message ) ): ?>
+						<p class="bg-danger p-d ml-b"><?php echo $error_message; ?></p>
+					<?php endif; ?>
+					<div class="form-group clearfix">
+						<label for="email" class="col-md-4 control-label text-right">Email:</label>
+						<div class="col-md-6">
+							<input name="email" value="<?php echo isset( $_POST['email'] ) ? $_POST['email'] : '' ; ?>" type="text" class="form-control" />
+						</div>
+					</div>
+					<div class="form-group clearfix">
+						<label for="password" class="col-md-4 control-label text-right">Password:</label>
+						<div class="col-md-6">
+							<input name="password" type="password" class="form-control" />
+						</div>
+					</div>
+					<div class="col-md-6 col-md-offset-4">
+						<input name="login" type="submit" value="Login" class="btn btn-success" />
+					</div>
+				</div>
 			</div>
-			<div class="form-group">
-				<label for="password">Password:</label>
-				<input name="password" type="password" class="form-control" />
-			</div>
-			<input name="login" type="submit" value="Login" class="btn btn-success" />
-		</form>
-	</div>
+		</div>
+	</form>
 </div>
 
 <?php require_once("partials/footer.php"); ?>
