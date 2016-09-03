@@ -61,12 +61,23 @@ if( isset( $_POST['data']['page'] ) ){
 					<div class="panel-heading">
 						' . $item->name . '
 					</div>
-					<div class="panel-body">
-						<a href="#_"><img src="img/uploads/' . $item->featured_image . '" width="100%" class="img-responsive" /></a>
+					<div class="panel-body p-0 p-b">
+						<a href="products-single.php?item=' . $item->_id . '"><img src="img/uploads/' . $item->featured_image . '" width="100%" class="img-responsive" /></a>
+						<div class="list-group m-0">
+							<div class="list-group-item b-0 b-t">
+								<i class="fa fa-calendar-o fa-2x pull-left ml-r"></i>
+								<p class="list-group-item-text">Price</p>
+								<h4 class="list-group-item-heading">$' . number_format( $item->price, 2 ) . '</h4>
+							</div>
+							<div class="list-group-item b-0 b-t">
+								<i class="fa fa-calendar fa-2x pull-left ml-r"></i>
+								<p class="list-group-item-text">On Stock</p>
+								<h4 class="list-group-item-heading">' . $item->quantity . '</h4>
+							</div>
+						</div>
 					</div>
 					 <div class="panel-footer">
-						</p>Price: $' . $item->price . '</p>
-						</p><a href="#_" class="btn btn-success btn-block">View Item</a></p>
+						</p><a href="products-single.php?item=' . $item->_id . '" class="btn btn-success btn-block">View Item</a></p>
 					 </div>
 				</div>
 			</div>
@@ -75,7 +86,7 @@ if( isset( $_POST['data']['page'] ) ){
 		
 	/* If the query returns nothing, we throw an error message */
 	} else {
-		$pag_content .= '<td colspan = "7" class = "bg-danger p-d">No results found.</td>';
+		$pag_content .= '<p class = "bg-danger p-d">No results found.</p>';
 		
 	}
 

@@ -36,6 +36,7 @@
 .override .pl-tb { padding-top: 20px; padding-bottom: 20px; }
 
 /* Margin 10px */
+.override .m-0 { margin: 0; }
 .override .m-d { margin: 10px; }
 .override .m-t { margin-top: 10px; }
 .override .m-b { margin-bottom: 10px; }
@@ -43,7 +44,6 @@
 .override .m-r { margin-right: 10px; }
 .override .m-lr { margin-left: 10px; margin-right: 10px; }
 .override .m-tb { margin-top: 10px; margin-bottom: 10px; }
-.override .m-0 { margin: 0; }
 
 /* Margin 20px */
 .override .ml-d { margin: 20px; }
@@ -55,6 +55,7 @@
 .override .ml-tb { margin-top: 20px; margin-bottom: 20px; }
 
 /* Borders */
+.override .b-0 { border: 0; }
 .override .b-d { border: 1px solid #ddd; }
 .override .b-t { border-top: 1px solid #ddd; }
 .override .b-r { border-right: 1px solid #ddd; }
