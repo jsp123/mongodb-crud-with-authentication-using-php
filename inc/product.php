@@ -11,7 +11,7 @@ function delete_product( $id ){
 		/* Delete all images of this product */
 		if( isset( $product->images ) && ! empty( $product->images ) ){
 			foreach( $product->images as $image ){
-				$image_path = ABSPATH . '/img/uploads/' . $image;
+				$image_path = ABSPATH . 'img/uploads/' . $image;
 				if( file_exists( $image_path ) == true ){
 					unlink( $image_path );
 				}

@@ -8,7 +8,7 @@ $err_succ = array(
 
 if( isset( $_POST['action'] ) && $_POST['action'] == 'unset-image' ){
 	
-	$image_path = ABSPATH . '/img/uploads/' . $_POST['image'];
+	$image_path = ABSPATH . 'img/uploads/' . $_POST['image'];
 	
 	if( file_exists( $image_path ) == true && unlink( $image_path ) ){
 		$err_succ['status'] = unset_image( $_POST['item_id'], $_POST['image'] ) ? 1 : 0;

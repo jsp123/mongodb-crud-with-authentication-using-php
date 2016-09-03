@@ -13,7 +13,7 @@ if( isset( $_POST['item_id'] ) ){
 	
 	$valid_formats = array('jpg', 'png', 'gif', 'bmp', 'jpeg'); /* Supported file types */
     $max_file_size = 1024 * 500; /* in kb */
-	$path = ABSPATH . '/img/uploads/'; /* path to where we will be saving the images */
+	$path = ABSPATH . 'img/uploads/'; /* path to where we will be saving the images */
 	$images = array();
 	
 	if( isset( $_FILES['images'] ) && ! empty( $_FILES['images'] ) ) {
