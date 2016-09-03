@@ -21,6 +21,13 @@ if( isset( $_GET['item'] ) && ! empty( $_GET['item'] ) ):
 		
 		$item = (object) $item;
 		
+		$item_images = array();
+		foreach( $item->images as $image ){
+			$item_images[] = array(
+				'small'	=>	UPLOADS_URL . $image,
+				'big'	=>	UPLOADS_URL . $image
+			);
+		}
 		?>
 		<div class="container products-view">
 			<div class="col-md-8">
@@ -29,8 +36,17 @@ if( isset( $_GET['item'] ) && ! empty( $_GET['item'] ) ):
 						<?php echo $item->name; ?>
 					</div>
 					<div class="panel-body">
-						<img src="" />
-						
+						<input type = "hidden" class = "item-images-json" value = '<?php echo (string) json_encode( $item_images, JSON_UNESCAPED_SLASHES ) ?>' />
+						<div class = "imageviewer">
+							<div class = "image-container"></div>
+							<span class = "glyphicon glyphicon-chevron-left prev"></span>
+							<span class = "glyphicon glyphicon-chevron-right next"></span>
+							
+							<div class = "footer-info">
+								<span class = "current"></span>/<span class="total"></span>
+							</div>
+						</div>
+					
 						<hr />
 						<h3>Product Description</h3>
 						<?php echo $item->content; ?>

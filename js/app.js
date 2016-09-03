@@ -26,6 +26,7 @@ var app = {
 			this.delete_post();
 			this.unset_image();
 			this.set_featured_image();
+			this.set_imageviewer();
 		}
 		
 		/**
@@ -427,6 +428,51 @@ var app = {
 					});
 				}
 			});
+		}
+		
+		/**
+		 * Load ImageViewer plugin
+		 */	
+		this.get_imageviewer_image = function(images, curImageIdx, viewer, curSpan){
+			var imgObj = images[curImageIdx - 1];
+			
+			viewer.load(imgObj.small, imgObj.big);
+			curSpan.html(curImageIdx);
+		}
+		
+		/**
+		 * 
+		 */
+		this.set_imageviewer = function() {
+			
+			_this = this;
+			
+			if($('input.item-images-json').length){
+				var images = JSON.parse($('input.item-images-json').val());
+				var curImageIdx = 1,
+					total = images.length;
+				var wrapper = $('.imageviewer'),
+					curSpan = wrapper.find('.current');
+				var viewer = ImageViewer(wrapper.find('.image-container'));
+			 
+				/* display total count */
+				wrapper.find('.total').html(total);
+				
+				wrapper.find('.next').click(function(){
+					 curImageIdx++;
+					if(curImageIdx > total) curImageIdx = 1;
+					_this.get_imageviewer_image(images, curImageIdx, viewer, curSpan);
+				});
+			 
+				wrapper.find('.prev').click(function(){
+					 curImageIdx--;
+					if(curImageIdx < 1) curImageIdx = total;
+					_this.get_imageviewer_image(images, curImageIdx, viewer, curSpan);
+				});
+			 
+				/* initially show image */
+				_this.get_imageviewer_image(images, curImageIdx, viewer, curSpan);
+			}
 		}
 	},
 	

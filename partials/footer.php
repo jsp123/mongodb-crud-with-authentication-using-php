@@ -13,6 +13,7 @@
 	<script src="//cdn.ckeditor.com/4.5.10/standard/ckeditor.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
 	<script src="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js"></script>
+	<script src="lib/imageviewer/imageviewer.min.js"></script>
 	<script src="lib/lobibox/lobibox.min.js"></script>
 	<script src="js/jquery.form.js"></script>
 	<script src="js/global.js"></script>

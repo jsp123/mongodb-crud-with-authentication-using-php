@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css">
+	<link rel="stylesheet" href="lib/imageviewer/imageviewer.css">
 	<link rel="stylesheet" href="lib/lobibox/lobibox.min.css">
 	<link rel="stylesheet" href="css/styles.css">
 </head>
