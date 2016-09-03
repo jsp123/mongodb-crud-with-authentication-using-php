@@ -2,7 +2,36 @@
 		<div class="container">	
 			<div class="panel panel-default">
 				<div class="panel-body">
-					<span class="pull-right">Copyright &copy <a href="http://carlofontanos.com" target="_blank">www.carlofontanos.com</a>; <?php echo date('Y'); ?></span>
+					<div class="pull-left">
+						<p>Developed by: <a href="http://carlofontanos.com" target="_blank">Carl Victor C. Fontanos</a></p>
+						<div class="personal-sm">
+							<a href="http://carlofontanos.com/about-me">
+								<i class="fa fa-home" title=""> </i>&nbsp;
+							</a>
+							<a href="https://www.facebook.com/carlo.fontanos" target="_blank" title="Facebook">
+								<i class="fa fa-facebook"> </i>&nbsp;
+							</a>
+							<a href="https://twitter.com/carlofontanos" target="_blank" title="Twitter">
+								<i class="fa fa-twitter"> </i>&nbsp;
+							</a>
+							<a href="https://plus.google.com/u/0/107219338853998242780/about" target="_blank" title="GooglePlus">
+								<i class="fa fa-google-plus"> </i>&nbsp;
+							</a>
+							<a href="https://ph.linkedin.com/in/carlfontanos" target="_blank" title="Linkedin">
+								<i class="fa fa-linkedin"> </i>&nbsp;
+							</a>
+							<a href="https://github.com/carlo-fontanos" target="_blank" title="Github">
+								<i class="fa fa-github"> </i>&nbsp;
+							</a>
+							<a href="mailto:carl.fontanos@gmail.com" title="Contact Me">
+								<i class="fa fa-envelope-o"> </i>
+							</a>
+						</div>
+					</div>
+					<div class="pull-right text-right">
+						<p>Copyright &copy <a href="http://carlofontanos.com" target="_blank">www.carlofontanos.com</a>; <?php echo date('Y'); ?></p>
+						<p>All Rights Reserved.</p>
+					</div>
 				</div>
 			</div>
 	</footer>
