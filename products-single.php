@@ -21,6 +21,7 @@ if( isset( $_GET['item'] ) && ! empty( $_GET['item'] ) ):
 		
 		$item = (object) $item;
 		
+		/* Prepare our images for imageviewer plugin */
 		$item_images = array();
 		foreach( $item->images as $image ){
 			$item_images[] = array(
@@ -60,7 +61,7 @@ if( isset( $_GET['item'] ) && ! empty( $_GET['item'] ) ):
 						Product Details
 					</div>
 					<div class="panel-body">
-						<h2 class="text-danger m-0 ml-b f-b">$<?php echo number_format( $item->price, 2 ); ?> <small>only</small></h2>
+						<h2 class="text-danger m-0 ml-b">$<?php echo number_format( $item->price, 2 ); ?> <small>only</small></h2>
 						
 						<div class="clearfix">
 							<div class="col-md-6">

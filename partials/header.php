@@ -26,7 +26,7 @@
 				<a class="navbar-brand" href="index.php">MongoDB CRUD with Auth Example</a>
 			</div>
 			
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="products.php">Products</a></li>
 					<?php if( ! is_user_logged_in() ): ?>

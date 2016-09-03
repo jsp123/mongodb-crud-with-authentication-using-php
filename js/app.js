@@ -441,7 +441,7 @@ var app = {
 		}
 		
 		/**
-		 * 
+		 * Initialize imageviewer plugin
 		 */
 		this.set_imageviewer = function() {
 			
