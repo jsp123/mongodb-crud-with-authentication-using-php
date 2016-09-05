@@ -19,7 +19,7 @@ var app = {
 		 */
 		this.init = function() {
 			// this.loaded_posts_pagination();
-			this.get_items_pagination();
+			this.get_all_items_pagination();
 			this.get_user_items_pagination();
 			this.add_post();
 			this.update_post();
@@ -30,7 +30,7 @@ var app = {
 		}
 		
 		/**
-		 * Load items pagination.
+		 * Load user items pagination.
 		 */
 		this.get_user_items_pagination = function() {
 			
@@ -91,7 +91,7 @@ var app = {
 		}
 		
 		/**
-		 * AJAX items pagination.
+		 * AJAX user items pagination.
 		 */
 		this.ajax_get_user_items_pagination = function(page, th_name, th_sort){
 			
@@ -140,9 +140,9 @@ var app = {
 		}
 		
 		/**
-		 * Load items pagination on the front-end.
+		 * Load front-end items pagination.
 		 */
-		this.get_items_pagination = function() {
+		this.get_all_items_pagination = function() {
 			
 			_this = this;
 			
@@ -150,10 +150,10 @@ var app = {
 			if($('form.post-list input').val()){
 				/* Submit hidden form input value to load previous page number */
 				data = JSON.parse($('form.post-list input').val());
-				_this.ajax_get_items_pagination(data.page, data.th_name, data.th_sort);
+				_this.ajax_get_all_items_pagination(data.page, data.th_name, data.th_sort);
 			} else {
 				/* Load first page */
-				_this.ajax_get_items_pagination(1, 'name', 'ASC');
+				_this.ajax_get_all_items_pagination(1, 'name', 'ASC');
 			}
 			
 			var th_active = $('.table-post-list th.active');
@@ -162,12 +162,12 @@ var app = {
 						
 			/* Search */
 			$('body').on('click', '.post_search_submit', function(){
-				_this.ajax_get_items_pagination(1, th_name, th_sort);
+				_this.ajax_get_all_items_pagination(1, th_name, th_sort);
 			});
 			/* Search when Enter Key is triggered */
 			$(".post_search_text").keyup(function (e) {
 				if (e.keyCode == 13) {
-					_this.ajax_get_items_pagination(1, th_name, th_sort);
+					_this.ajax_get_all_items_pagination(1, th_name, th_sort);
 				}
 			});
 			
@@ -175,7 +175,7 @@ var app = {
 			$('body').on('click', '.pagination-nav li.active', function(){
 				var page = $(this).attr('p');
 				var current_sort = $(th_active).hasClass('DESC') ? 'DESC': 'ASC';
-				_this.ajax_get_items_pagination(page, th_name, current_sort);                
+				_this.ajax_get_all_items_pagination(page, th_name, current_sort);                
 			}); 
 
 			/* Sorting Clicks */
@@ -190,10 +190,10 @@ var app = {
 						$(this).addClass('active');
 					}
 					if(!$(this).hasClass('DESC')){
-						_this.ajax_get_items_pagination(1, th_name, 'DESC');
+						_this.ajax_get_all_items_pagination(1, th_name, 'DESC');
 						$(this).addClass('DESC');
 					} else {
-						_this.ajax_get_items_pagination(1, th_name, 'ASC');
+						_this.ajax_get_all_items_pagination(1, th_name, 'ASC');
 						$(this).removeClass('DESC');
 					}
 				}
@@ -201,11 +201,11 @@ var app = {
 		}
 		
 		/**
-		 * AJAX items pagination.
+		 * AJAX front-end items pagination.
 		 */
-		this.ajax_get_items_pagination = function(page, th_name, th_sort){
+		this.ajax_get_all_items_pagination = function(page, th_name, th_sort){
 			
-			if($(".pagination-container").length > 0 && $('.products-view').length > 0 ){
+			if($(".pagination-container").length > 0 && $('.products-view-all').length > 0 ){
 				$(".pagination-container").html('<img src="img/loading.gif" class="ml-tb" />');
 				
 				var post_data = {

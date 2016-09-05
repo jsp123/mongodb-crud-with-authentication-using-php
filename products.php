@@ -1,7 +1,7 @@
 <?php require_once('inc/config.php'); ?>
 <?php require_once('partials/header.php'); ?>
   
-<div class="container products-view">
+<div class="container products-view-all">
 	<form class = "post-list">
 		<input type = "hidden" value = "" />
 	</form>
