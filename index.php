@@ -71,22 +71,22 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
-				<h2>Display Some Work on the Home Page Portfolio</h2>
+				<h2>Display Some of Your Featured Products Here</h2>
 				<hr>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-6">
 				<a href="portfolio-item.html">
-					<img class="img-responsive ml-t" src="http://placehold.it/700x450">
+					<img class="img-responsive ml-t" src="http://placehold.it/700x450?text=Product+1">
 				</a>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-6">
 				<a href="portfolio-item.html">
-					<img class="img-responsive ml-t" src="http://placehold.it/700x450">
+					<img class="img-responsive ml-t" src="http://placehold.it/700x450?text=Product+2">
 				</a>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-6">
 				<a href="portfolio-item.html">
-					<img class="img-responsive ml-t" src="http://placehold.it/700x450">
+					<img class="img-responsive ml-t" src="http://placehold.it/700x450?text=Product+3">
 				</a>
 			</div>
 			
@@ -112,7 +112,7 @@
 				</ul>
 			</div>
 			<div class="col-lg-6 col-md-6 col-sm-6">
-				<img class="img-responsive" src="http://placehold.it/700x450/ffffff/cccccc">
+				<img class="img-responsive" src="http://placehold.it/700x450/ffffff/cccccc?text=Featured+Image">
 			</div>
 		</div>
 	</div>
@@ -122,7 +122,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6 col-md-6 col-sm-6">
-				<img class="img-responsive" src="http://placehold.it/700x450">
+				<img class="img-responsive" src="http://placehold.it/700x450?text=Featured+Image">
 			</div>
 			<div class="col-lg-6 col-md-6 col-sm-6">
 				<h2>Modern Business Features Include:</h2>
