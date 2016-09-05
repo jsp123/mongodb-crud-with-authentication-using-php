@@ -81,7 +81,7 @@ if( isset( $_GET['item'] ) && ! empty( $_GET['item'] ) ):
 						<hr />
 						
 						<p><strong>Date Posted</strong>: <?php echo date( "F j, Y, g:i a", strtotime( $item->date ) ); ?></p>
-						<p><strong>On Stock</strong>: <?php echo $item->quantity; ?></p>
+						<p><strong>Quantity</strong>: <?php echo $item->quantity; ?></p>
 						
 						<hr />
 						
