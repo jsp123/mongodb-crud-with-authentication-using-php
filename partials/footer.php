@@ -1,39 +1,38 @@
-	<footer class="m-t">
-		<div class="container">	
-			<div class="panel panel-default">
-				<div class="panel-body">
-					<div class="pull-left">
-						<p>Developed by: <a href="http://carlofontanos.com" target="_blank">Carl Victor C. Fontanos</a></p>
-						<div class="personal-sm">
-							<a href="http://carlofontanos.com/about-me">
-								<i class="fa fa-home text-success" title=""> </i>&nbsp;
-							</a>
-							<a href="https://www.facebook.com/carlo.fontanos" target="_blank" title="Facebook">
-								<i class="fa fa-facebook text-danger"> </i>&nbsp;
-							</a>
-							<a href="https://twitter.com/carlofontanos" target="_blank" title="Twitter">
-								<i class="fa fa-twitter text-warning"> </i>&nbsp;
-							</a>
-							<a href="https://plus.google.com/u/0/107219338853998242780/about" target="_blank" title="GooglePlus">
-								<i class="fa fa-google-plus text-success"> </i>&nbsp;
-							</a>
-							<a href="https://ph.linkedin.com/in/carlfontanos" target="_blank" title="Linkedin">
-								<i class="fa fa-linkedin text-danger"> </i>&nbsp;
-							</a>
-							<a href="https://github.com/carlo-fontanos" target="_blank" title="Github">
-								<i class="fa fa-github text-"> </i>&nbsp;
-							</a>
-							<a href="mailto:carl.fontanos@gmail.com" title="Contact Me">
-								<i class="fa fa-envelope-o text-warning"> </i>
-							</a>
-						</div>
-					</div>
-					<div class="pull-right text-right">
-						<p>Copyright &copy <a href="http://carlofontanos.com" target="_blank">www.carlofontanos.com</a>; <?php echo date('Y'); ?></p>
-						<p>All Rights Reserved.</p>
+	<footer>
+		<div class="container">
+			<div class="row well ml-t">
+				<div class="col-lg-8 col-md-8">		
+					<h4>Developed by: <a href="http://carlofontanos.com" target="_blank">Carl Victor C. Fontanos</a></h4>
+					<div class="personal-sm">
+						<a href="http://carlofontanos.com/about-me">
+							<i class="fa fa-home text-success" title=""> </i>&nbsp;
+						</a>
+						<a href="https://www.facebook.com/carlo.fontanos" target="_blank" title="Facebook">
+							<i class="fa fa-facebook text-danger"> </i>&nbsp;
+						</a>
+						<a href="https://twitter.com/carlofontanos" target="_blank" title="Twitter">
+							<i class="fa fa-twitter text-warning"> </i>&nbsp;
+						</a>
+						<a href="https://plus.google.com/u/0/107219338853998242780/about" target="_blank" title="GooglePlus">
+							<i class="fa fa-google-plus text-success"> </i>&nbsp;
+						</a>
+						<a href="https://ph.linkedin.com/in/carlfontanos" target="_blank" title="Linkedin">
+							<i class="fa fa-linkedin text-danger"> </i>&nbsp;
+						</a>
+						<a href="https://github.com/carlo-fontanos" target="_blank" title="Github">
+							<i class="fa fa-github text-"> </i>&nbsp;
+						</a>
+						<a href="mailto:carl.fontanos@gmail.com" title="Contact Me">
+							<i class="fa fa-envelope-o text-warning"> </i>
+						</a>
 					</div>
 				</div>
+				<div class="col-lg-4 col-md-4">
+					<p class="m-t">Copyright &copy <a href="http://carlofontanos.com" target="_blank">www.carlofontanos.com</a>; <?php echo date('Y'); ?></p>
+					<p>All Rights Reserved.</p>
+				</div>
 			</div>
+		</div>
 	</footer>
 	
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
