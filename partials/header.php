@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>MongoDB CRUD wtih Authentication Example</title>
+	<title>MyMongoDB CRUD wtih Authentication Example</title>
 	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,16 +17,16 @@
 	<nav class="navbar navbar-inverse" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.php">MongoDB CRUD with Auth Example</a>
+				<a class="navbar-brand" href="index.php">MyMongoDB</a>
 			</div>
 			
-			<div class="collapse navbar-collapse">
+			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="products.php">Products</a></li>
 					<?php if( ! is_user_logged_in() ): ?>
