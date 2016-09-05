@@ -1,7 +1,9 @@
 /**
- * App Class
+ * App Class 
  *
- * @created		08/19/2016
+ * @author		Carl Victor Fontanos
+ * @author_url	www.carlofontanos.com
+ *
  */
 
 /**

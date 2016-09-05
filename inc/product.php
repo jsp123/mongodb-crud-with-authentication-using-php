@@ -1,4 +1,12 @@
 <?php 
+/**
+ * Products Model 
+ *
+ * @author		Carl Victor Fontanos
+ * @author_url	www.carlofontanos.com
+ *
+ */
+
 function delete_product( $id ){
 	
 	global $products;

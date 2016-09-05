@@ -1,4 +1,12 @@
 <?php 
+/**
+ * User Model 
+ *
+ * @author		Carl Victor Fontanos
+ * @author_url	www.carlofontanos.com
+ *
+ */
+
 function register( $user_data ) {
 	
 	global $users;
