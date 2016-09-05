@@ -100,12 +100,14 @@ if( isset( $_GET['item'] ) && ! empty( $_GET['item'] ) ):
 			</div>
 		</div>
 	<?php else: ?>
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				Not Found!
-			</div>
-			<div class="panel-body">
-				<p class="bg-danger p-d">The product you are looking is not found</p>
+		<div class="container">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					Not Found!
+				</div>
+				<div class="panel-body">
+					<p class="bg-danger p-d">The product you are looking is not found</p>
+				</div>
 			</div>
 		</div>
 	<?php endif; ?>
