@@ -50,13 +50,18 @@ if( isset( $_POST['data']['page'] ) ){
 	if( $count ){
 		
 		/* Iterate thru each item */
+		$i = 1;
 		foreach( $all_items as $key => $item ){
 			
 			$item = (object) $item;
 			$status = $item->status == 1 ? 'Active' : 'Inactive';
 			
+			if ( $i % 4 == 1 ){
+				$pag_content .= '<div class="clearfix">';
+			}
+			
 			$pag_content .= '
-			<div class="col-md-3">
+			<div class="col-sm-3">
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						' . $item->name . '
@@ -82,6 +87,16 @@ if( isset( $_POST['data']['page'] ) ){
 				</div>
 			</div>
 			';
+			
+			if ( $i % 4 == 0 ){
+				$pag_content .= '</div>';
+			}
+			
+			$i++;
+		}
+		
+		if ( $i % 4 != 1 ){
+			$pag_content .= '</div>';
 		}
 		
 	/* If the query returns nothing, we throw an error message */
