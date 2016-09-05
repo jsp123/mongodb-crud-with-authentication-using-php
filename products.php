@@ -10,15 +10,27 @@
 		<article class="navbar-form navbar-left p-0 m-0 ml-b">
 			<div class="form-group">
 				<label>Per Page: </label>
-				<select class="form-control post_max">
-					<option value="40">40</option>
-					<option value="80">80</option>
-					<option value="160">160</option>
+				<select class="form-control post_max m-b">
+					<option value="20">20</option>
+					<option value="50">50</option>
+					<option value="100">100</option>
 				</select>
 				<label>Search Keyword: </label>
-				<input type="text" class="form-control post_search_text" placeholder="Enter a keyword">
+				<input type="text" class="form-control post_search_text m-b" placeholder="Enter a keyword" />
 			</div>
-			<input type = "submit" value = "Filter" class = "btn btn-primary post_search_submit" />
+			<div class="form-group">
+				<label>Order By: </label>
+				<select class="form-control post_name m-b">
+					<option value="name">Title</option>
+					<option value="price">Price</option>
+					<option value="quantity">Quantity</option>
+				</select>
+				<select class="form-control post_sort m-b">
+					<option value="ASC">ASC</option>
+					<option value="DESC">DESC</option>
+				</select>
+			</div>
+			<input type = "submit" value = "Filter" class = "btn btn-primary post_search_submit m-b" />
 		</article>
 	</div>
 	

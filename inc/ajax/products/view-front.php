@@ -4,11 +4,11 @@ require_once('../../config.php');
 $pag_content = '';
 $pag_navigation = '';
 
-if( isset( $_POST['data']['page'] ) ){
+if( isset( $_POST['action'] ) && $_POST['action'] == 'get-all-products' ){
 	
 	$page = $_POST['data']['page']; /* The page we are currently at */
-	$name = $_POST['data']['th_name']; /* The name of the column name we want to sort */
-	$sort = $_POST['data']['th_sort']; /* The order of our sort (DESC or ASC) */
+	$name = $_POST['data']['name']; /* The name of the column name we want to sort */
+	$sort = $_POST['data']['sort']; /* The order of our sort (DESC or ASC) */
 	$max  = $_POST['data']['max']; /* Number of items to display per page */
 	$cur_page = $page;
 	$page -= 1;
