@@ -452,6 +452,35 @@ var app = {
 		}
 	},
 	
+	User: function() {
+		this.init = function() {
+			this.update_account();
+		}
+		
+		this.update_account = function(){
+			$('.update-account').ajaxForm({
+				beforeSerialize: function() {
+					update_ckeditor_instances();
+					wave_box('on');
+				},
+				success: function(response, textStatus, xhr, form) {
+					response = JSON.parse(response);
+					
+					if(response.status == 0){
+						Lobibox.notify('error', {msg: response.message, size: 'mini', sound: false});
+					}
+					
+					if(response.status == 1){
+						Lobibox.notify('success', {msg: response.message, size: 'mini', sound: false});
+					}
+					
+					wave_box('off');
+				}
+            });
+		}
+		
+	},
+	
 	/**
      * Global
      */
@@ -500,5 +529,8 @@ jQuery(document).ready( function () {
 	
 	posts = new app.Posts(); /* Instantiate the Posts Class */
 	posts.init(); /* Load Posts class methods */
+	
+	user = new app.User(); /* Instantiate the User Class */
+	user.init(); /* Load User class methods */
 	
 });

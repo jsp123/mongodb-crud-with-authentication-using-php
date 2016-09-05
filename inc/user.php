@@ -85,4 +85,25 @@ function current_user(){
 	return (object) $current_user_data;
 }
 
+function update_account( $id, $data ){
+	
+	global $users; 
+	
+	/* Check if object ID is valid */
+	if( MongoId::isValid( $id ) == true ){
+		
+		/* Update our fields from the database */
+		$users->update(
+			array( '_id' => new MongoId( $id ) ),
+			array( '$set' => $data )
+		);
+		
+		/* Check if the update was successfull */
+		return $users->findOne() ? true : false;
+		
+	} else {
+		echo false;
+	}
+}
+
 ?>
