@@ -98,18 +98,10 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6 col-md-6 col-sm-6">
-				<h2>Modern Business Features Include:</h2>
-				<ul>
-					<li>Bootstrap 3 Framework</li>
-					<li>Mobile Responsive Design</li>
-					<li>Predefined File Paths</li>
-					<li>Working PHP Contact Page</li>
-					<li>Minimal Custom CSS Styles</li>
-					<li>Unstyled: Add Your Own Style and Content!</li>
-					<li>Font-Awesome fonts come pre-installed!</li>
-					<li>100% <strong>Free</strong> to Use</li>
-					<li>Open Source: Use for any project, private or commercial!</li>
-				</ul>
+				<h2>Usto odio dignissim qui blandit praesent:</h2>
+				<p>
+					Consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum. Lorem ipsum dolor sit amet.
+				</p>
 			</div>
 			<div class="col-lg-6 col-md-6 col-sm-6">
 				<img class="img-responsive" src="http://placehold.it/700x450/ffffff/cccccc?text=Featured+Image">
@@ -125,18 +117,10 @@
 				<img class="img-responsive" src="http://placehold.it/700x450?text=Featured+Image">
 			</div>
 			<div class="col-lg-6 col-md-6 col-sm-6">
-				<h2>Modern Business Features Include:</h2>
-				<ul>
-					<li>Bootstrap 3 Framework</li>
-					<li>Mobile Responsive Design</li>
-					<li>Predefined File Paths</li>
-					<li>Working PHP Contact Page</li>
-					<li>Minimal Custom CSS Styles</li>
-					<li>Unstyled: Add Your Own Style and Content!</li>
-					<li>Font-Awesome fonts come pre-installed!</li>
-					<li>100% <strong>Free</strong> to Use</li>
-					<li>Open Source: Use for any project, private or commercial!</li>
-				</ul>
+				<h2>Nibh euismod tincidunt ut laoreet:</h2>
+				<p>
+					Sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum. Lorem ipsum dolor sit amet. Consectetuer adipiscing elit
+				</p>
 			</div>
 		</div>
 	</div>
